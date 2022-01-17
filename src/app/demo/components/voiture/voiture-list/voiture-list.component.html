@@ -1,0 +1,22 @@
+<h2>Liste des voitures</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+        <th scope="col">marque</th>
+        <th scope="col">modele</th>
+        <th scope="col">type carburant</th>
+        <th scope="col">nbr porte</th>
+        <th scope="col">puissance moteur</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let voiture of liste">
+            <td>{{ voiture.marque }}</td>
+            <td>{{ voiture.modele }}</td>
+            <td>{{ voiture.carburant }}</td>
+            <td>{{ voiture.nombrePorte }}</td>
+            <td>{{ voiture.puissanceMoteur }}</td>
+        </tr>
+    </tbody>
+</table>

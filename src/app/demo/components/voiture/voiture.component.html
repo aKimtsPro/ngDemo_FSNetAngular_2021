@@ -1,0 +1,13 @@
+
+<h1>Gestion des voitures</h1>
+
+<div class="row">
+
+    <div class="col-6">
+        <app-voiture-list [liste]="listVoiture"></app-voiture-list>
+    </div>
+    <div class="col-6">
+        <app-voiture-form (add-voiture)="onAddVoiture($event)"></app-voiture-form>
+    </div>
+
+</div>

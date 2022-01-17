@@ -1,0 +1,33 @@
+<h2>Ajouter des voitures</h2>
+
+<form [formGroup]="voitureForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="marque" class="form-label">marque</label>
+        <input type="text" class="form-control" id="marque" formControlName="marque">
+    </div>
+    <div class="mb-3">
+        <label for="modele" class="form-label">modele</label>
+        <input type="text" class="form-control" id="modele" formControlName="modele">
+    </div>
+
+    <div class="mb-3">
+        <label for="modele" class="form-label">carburant</label>
+        <select class="form-select" formControlName="carburant">
+            <option value="essence">essence</option>
+            <option value="diesel">diesel</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="modele" class="form-label">nombre de porte</label>
+        <select class="form-select" formControlName="nombrePorte">
+            <option value="3">3</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="puiss-moteur" class="form-label">puissance moteur:</label>
+        <input type="number" min="0" class="form-control" id="puiss-moteur" formControlName="puissanceMoteure">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

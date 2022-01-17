@@ -1,0 +1,82 @@
+<h2>Les directives</h2>
+
+<h3>Components directives</h3>
+
+<h4>NgStyle</h4>
+
+<input type="color" [(ngModel)]="inputColor">
+
+<p [ngStyle]="{color: inputColor, border: '2px solid '+inputColor}">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias architecto 
+    ducimus quaerat, recusandae dolor obcaecati eius voluptates omnis in iste velit, 
+    quibusdam qui, soluta laborum aut consequuntur facilis. Veritatis, quis.
+</p>
+
+<h4>NgClass</h4>
+
+<input type="text" [(ngModel)]="inputValid" [ngClass]="{invalid: true, valid: true, 'truc-bidule': true}">
+<button class="btn btn-primary" [disabled]="!isValid()" (click)="addPers()">ajouter</button>
+
+<h3>Directives structurelles</h3>
+
+<button class="btn btn-info" 
+    (click)="toggleTextShow()" 
+    [ngClass]="{'btn-info': !textShow, 'btn-danger': textShow}"
+>
+    {{ textShow ? 'cacher' : 'afficher' }}
+</button>
+
+<p *ngIf="textShow">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate veniam porro 
+    nobis eveniet tempora id aperiam autem sunt assumenda recusandae harum in 
+    repudiandae, quos quas alias a et minus consequatur!
+</p>
+
+<h4>ngFor</h4>
+
+<ul>
+    <li *ngFor="let personne of personnes; let i=index">
+        <div>
+            <p><span>nom: </span> {{ personne.nom }} </p>
+            <p><span>age: </span> {{ personne.age }} ans</p>
+        </div>
+        <button class="btn btn-danger" (click)="removePers(i)">supprimer</button>
+    </li>
+</ul>
+
+<h4>NgSwitch</h4>
+
+<select class="form-select" [(ngModel)]="menuSelect">
+    <option value="pizza">menu pizza</option>
+    <option value="pate">menu pate</option>
+    <option value="boisson">menu boisson</option>
+    <option value="autre">autre</option>
+    <option value="autre2">autre 2</option>
+</select>
+
+<div [ngSwitch]="menuSelect">
+    <div *ngSwitchCase="'pizza'">
+        <ul>
+            <li>pizza hawaienne</li>
+            <li>pizza au anchois</li>
+            <li>pizza barbecue</li>
+        </ul>
+    </div>
+    <div *ngSwitchCase="'pate'">
+        <ul>
+            <li>pate bolo</li>
+            <li>pate carbo</li>
+            <li>pate au beurre</li>
+        </ul>
+    </div>
+    <div *ngSwitchCase="'boisson'">
+        <ul>
+            <li>eau</li>
+            <li>soda</li>
+            <li>vin</li>
+        </ul>
+    </div>
+    <div *ngSwitchDefault>
+        <p>il n'a pas de menu correspondant</p>
+    </div>
+</div>

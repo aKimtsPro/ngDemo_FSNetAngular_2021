@@ -1,0 +1,36 @@
+{
+  "chambres": [
+    {
+      "id": 1,
+      "numero": 101,
+      "superficie": 21,
+      "type": "simple",
+      "television": true,
+      "jacuzzi": false
+    },
+    {
+      "id": 2,
+      "numero": 102,
+      "superficie": 40,
+      "type": "double",
+      "television": true,
+      "jacuzzi": true
+    },
+    {
+      "id": 99,
+      "numero": 103,
+      "superficie": 23,
+      "type": "simple",
+      "television": true,
+      "jacuzzi": false
+    },
+    {
+      "id": 3,
+      "numero": 103,
+      "superficie": 23,
+      "type": "simple",
+      "television": true,
+      "jacuzzi": true
+    }
+  ]
+}

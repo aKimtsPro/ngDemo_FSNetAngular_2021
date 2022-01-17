@@ -1,0 +1,38 @@
+<div class="container">
+
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="id" class="form-label">id</label>
+          <input type="number" class="form-control" id="id" formControlName="id">
+        </div>
+      <div class="mb-3">
+        <label for="numero" class="form-label">numéro</label>
+        <input type="number" class="form-control" id="numero" formControlName="numero">
+      </div>
+      <div class="mb-3">
+        <label for="superficie" class="form-label">superficie</label>
+        <input type="number" class="form-control" id="superficie" formControlName="superficie">
+      </div>
+    
+      <div class="mb-3">
+        <label for="type" class="form-label">type</label>
+        <select id="type" class="form-select" formControlName="type">
+          <option value="simple">simple</option>
+          <option value="double">double</option>
+          <option value="split-double">double séparé</option>
+        </select>
+      </div>
+    
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="television" formControlName="television">
+        <label class="form-check-label" for="television">television</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="jacuzzi" formControlName="jacuzzi">
+        <label class="form-check-label" for="jacuzzi">jacuzzi</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+    </div>

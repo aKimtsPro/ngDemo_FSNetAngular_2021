@@ -7,6 +7,8 @@ import { AccueilComponent } from './components/accueil/accueil.component';
 import { FormsModule } from '@angular/forms';
 import { ExoModule } from './exo/exo.module';
 import { DemoModule } from './demo/demo.module';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,10 @@ import { DemoModule } from './demo/demo.module';
     AppRoutingModule,
     FormsModule,
     // ExoModule,
-    // DemoModule
+    // DemoModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
